@@ -1,0 +1,50 @@
+version: "3.3"
+services:
+    # Nginx Service
+    webserver:
+        container_name: nginx
+        build:
+            context: ./
+            dockerfile: ./nginx/Dockerfile
+        restart: unless-stopped
+        tty: true
+        volumes: 
+            - ../:/var/www
+        ports: 
+            - 1234:80
+        networks:
+            - laravel-web-socket
+
+    # PHP Service
+    php:
+        container_name: php_fpm
+        build: 
+            context: ./
+            dockerfile: ./php/Dockerfile
+        tty: true
+        volumes:
+            - ../:/var/www
+        networks: 
+            - laravel-web-socket
+    
+    # MySQL Service
+    mysql:
+        container_name: db
+        image: mysql:5.7
+        restart: unless-stopped
+        tty: true
+        volumes: 
+            - ./mysql/volumes:/var/lib/mysql
+        ports: 
+            - 3361:3306
+        environment: 
+            - MYSQL_DATABASE=laravel_web_socket
+            - MYSQL_ROOT_PASSWORD=laravelDocker
+        networks: 
+            - laravel-web-socket
+
+# Docker Networks
+networks: 
+    laravel-web-socket:
+        driver: bridge
+            

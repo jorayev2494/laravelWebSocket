@@ -38,6 +38,8 @@ window.Echo = new Echo({
     key: process.env.MIX_PUSHER_APP_KEY,
     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
     // encrypted: true
-    wsHost: window.location.hostname,
-    wsPort: 6001
+    wsHost: window.location.hostname,   // '127.0.0.1'
+    wsPort: 6001,                       // Port Listen Front-End Laravel-Echo.js
+    // wssPort: 6001,
+    // enabledTransports: ['ws', 'wss'],
 });

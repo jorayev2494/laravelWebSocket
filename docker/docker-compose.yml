@@ -24,6 +24,8 @@ services:
         tty: true
         volumes:
             - ../:/var/www
+        ports: 
+            - 6001:6001     # Laravel WebSockets Port
         networks: 
             - laravel-web-socket
     

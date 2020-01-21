@@ -1932,6 +1932,8 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -1948,11 +1950,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = (_defineProperty({
+  data: function data() {
+    return {
+      socketValue: "Default Message!"
+    };
+  },
   mounted: function mounted() {
     console.log('Component mounted.');
   }
-});
+}, "mounted", function mounted() {
+  var _this = this;
+
+  alert("Alertawd awd wad awdawd awd 111 22222 33");
+  Echo.channel('home').listen('NewMessage', function (event) {
+    _this.socketValue += event.message;
+  });
+}));
 
 /***/ }),
 
@@ -29417,32 +29434,33 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-8" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _vm._v("Example Component")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _vm._v(
+              "\n                    I'm an example component. Test Universitet awd aw d Node Best awdawd Yakyb Test\n                "
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _vm._v(
+              "\n                    " +
+                _vm._s(_vm.socketValue) +
+                "\n                "
+            )
           ])
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -41784,8 +41802,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Docker\LaravelDocProjects\laravelWebSockets.loc\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Docker\LaravelDocProjects\laravelWebSockets.loc\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

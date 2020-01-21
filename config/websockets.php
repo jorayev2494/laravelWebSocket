@@ -70,7 +70,7 @@ return [
      */
     'middleware' => [
         'web',
-        'auth',             // Guard Page http://domain.loc/laravel-websockets
+        // 'auth',             // Guard Page http://domain.loc/laravel-websockets
         Authorize::class,
     ],
 

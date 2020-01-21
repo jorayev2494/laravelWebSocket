@@ -26,6 +26,22 @@ services:
             - ../:/var/www
         ports: 
             - 6001:6001     # Laravel WebSockets Port
+        # links: 
+        #     - mysql
+        networks: 
+            - laravel-web-socket
+        # command: "php artisan migrate:fresh --seed"
+    
+    # Node.js Service
+    node:
+        container_name: node.js
+        build: 
+            context: ./
+            dockerfile: ./node/Dockerfile
+        tty: true
+        volumes: 
+            - ../:/var/www
+        command: ['npm', 'run', 'watch-poll']
         networks: 
             - laravel-web-socket
     
@@ -35,8 +51,8 @@ services:
         image: mysql:5.7
         restart: unless-stopped
         tty: true
-        volumes: 
-            - ./mysql/volumes:/var/lib/mysql
+        # volumes: 
+        #     - ./mysql/volumes:/var/lib/mysql
         ports: 
             - 3361:3306
         environment: 

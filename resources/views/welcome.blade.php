@@ -83,7 +83,7 @@
             
                 <div class="content">
                     <div class="title m-b-md">
-                        Laravel
+                        Laravel, Docker, WebSockets, Node, Redis
                     </div>
             
                     <div class="links">

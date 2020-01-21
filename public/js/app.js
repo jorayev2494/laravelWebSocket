@@ -1953,6 +1953,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = (_defineProperty({
   data: function data() {
     return {
@@ -1965,7 +1971,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 }, "mounted", function mounted() {
   var _this = this;
 
-  alert("Alertawd awd wad awdawd awd 111 22222 33");
+  // alert("Alertawd awd wad awdawd awd 111 22222 33");
   Echo.channel('home').listen('NewMessage', function (event) {
     _this.socketValue += event.message;
   });
@@ -29444,7 +29450,7 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
             _vm._v(
-              "\n                    I'm an example component. Test Universitet awd aw d Node Best awdawd Yakyb Test\n                "
+              "\n                    I'm an example component. Test Universitet awd aw d Node Best awdawd Yakyb Test daw dwa \n                    a daw daw d a daw aw\n                    a aw dadw aw aw daw aw d\n                    aw d awdaw dawdaw daw daw \n                    awda wawd awd aw aw aw \n                    testsing node container watch-poll\n                    not Alert();..55\n                "
             )
           ]),
           _vm._v(" "),

@@ -1,4 +1,4 @@
-version: "3.3"
+version: '3.3'
 services:
     # Nginx Service
     webserver:
@@ -26,8 +26,8 @@ services:
             - ../:/var/www
         ports: 
             - 6001:6001     # Laravel WebSockets Port
-        # links: 
-        #     - mysql
+        links: 
+            - mysql
         networks: 
             - laravel-web-socket
         # command: "php artisan migrate:fresh --seed"
@@ -51,10 +51,15 @@ services:
         image: mysql:5.7
         restart: unless-stopped
         tty: true
-        # volumes: 
-        #     - ./mysql/volumes:/var/lib/mysql
+        volumes: 
+            - ./mysql/my.cnf:/etc/mysql/my.cnf
+            - ./mysql/volumes:/var/logs/mysql
+            # - ./mysql/volumes:/var
+            # - ./mysql/logs:/var/logs
         ports: 
-            - 3361:3306
+            - 33060:3306
+        expose: 
+            - 3306
         environment: 
             - MYSQL_DATABASE=laravel_web_socket
             - MYSQL_ROOT_PASSWORD=laravelDocker
